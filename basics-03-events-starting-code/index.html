@@ -22,6 +22,17 @@
       <button v-on:click="resetCounter">Remove</button>
       <button v-on:click="reduceCounter(3)">Reduce</button>
       <p>Result: {{ counter }}</p>
+      <input
+        type="text"
+        v-on:input="setName($event, 'kdman')"
+        v-on:keyup.enter="confirmInput"
+      />
+      <!-- $event는 지정된 내장 이벤트객체를 전달할수있는 값 -->
+      <p>Your Name : {{confirmedName }}</p>
+      <form v-on:submit.prevent="submitForm">
+        <input type="text" />
+        <button>Sign Up</button>
+      </form>
     </section>
   </body>
 </html>
